@@ -56,7 +56,7 @@ print(text_to_understanding("septante-quatre"))  # "74"
 
 ## Test Results / Résultats des Tests
 
-The parser includes **400+ test cases** covering:
+The parser includes **300+ test cases** covering:
 - Basic numbers (0-999)
 - Large numbers (thousands, millions, billions)
 - All fraction types (halves, thirds, quarters, fifths, etc.)
