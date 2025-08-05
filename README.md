@@ -72,18 +72,18 @@ Le parseur comprend **plus de 350 cas de test** couvrant :
 
 | Entrée               | Sortie        | Type               |
 |--------------------------------|---------------|--------------------|
-| `"aucun"`                      | `"0%"`        | Expression zéro    |
-| `"la moitié"`                  | `"50%"`       | Fraction           |
-| `"trois quarts"`               | `"75%"`       | Fraction           |
-| `"85 / 100"`                   | `"85%"`       | Fraction numérique |
-| `"nonante-deux"`               | `"92"`        | Variante régionale |
-| `"presque tout"`               | `"95%"`       | Approximation      |
-| `"mille deux cent"`            | `"1200"`      | Grand nombre       |
-| `"un cinquième"`               | `"20%"`       | Ordinal            |
-| `"moins cent quatre-vingt dix %"`| `"-190%"`     | Pourcentage négatif|
-| `"trente pourcent"`| `"30%"`     | Pourcentage|
-| `"moins trois cent"`           | `"-300"`      | Texte négatif      |
-| `"moins trois quarts"`         | `"-75%"`      | Fraction négative  |
+| `"je n'ai vu aucun chat dans la rue"`                      | `"0%"`        | Expression zéro    |
+| `"la moitié du lait a été bu"`                  | `"50%"`       | Fraction           |
+| `"trois quarts des gens sont biens élevés"`               | `"75%"`       | Fraction           |
+| `"85 / 100 de la population est majeure"`                   | `"85%"`       | Fraction numérique |
+| `"nonante-deux personnes seront présentes"`               | `"92"`        | Variante régionale |
+| `"presque tout le monde écoute de la musique"`               | `"95%"`       | Approximation      |
+| `"c est mille deux cent fois plus rapide"`            | `"1200"`      | Grand nombre       |
+| `"un cinquième des gens ont cette opinion"`               | `"20%"`       | Ordinal            |
+| `"moins cent quatre-vingt dix % de dette"`| `"-190%"`     | Pourcentage négatif|
+| `"il y a trente pourcent que cela arrive"`| `"30%"`     | Pourcentage|
+| `"j ai moins trois cent sur mon compte"`           | `"-300"`      | Texte négatif      |
+| `"multiplie par moins trois quarts"`         | `"-75%"`      | Fraction négative  |
 | `"nous sommes mardi"`           | `"aucun chiffre"` | Pas de chiffre  |
 
 ## Conditions d’utilisation
