@@ -85,3 +85,7 @@ Le parseur comprend **plus de 350 cas de test** couvrant :
 | `"moins trois cent"`           | `"-300"`      | Texte négatif      |
 | `"moins trois quarts"`         | `"-75%"`      | Fraction négative  |
 | `"nous sommes mardi"`           | `"aucun chiffre"` | Pas de chiffre  |
+
+## Condition d'utilisation
+Il est obligatoire d’inclure en commentaire dans le code quand utiliser :
+le nom du projet, de l auteur GitHub ainsi que le lien vers le dépôt GitHub afin de faciliter une utilisation future, et un partage de la librairie.
