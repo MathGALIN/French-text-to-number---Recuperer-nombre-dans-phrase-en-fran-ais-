@@ -1,37 +1,35 @@
-# French Text to number or percentages / Analyseur de Texte Français vers nombres ou pourcentages
-
 ## Description
 
-**English:** A comprehensive French text parser that extracts numerical values and percentages from French natural language input. Handles fractions, ordinals, spelled-out numbers, and common language variations including Belgian/Swiss French forms.
+Analyseur de texte français complet qui extrait les valeurs numériques et pourcentages à partir de texte en français naturel. Gère les fractions, négatif, ordinaux, nombres écrits en lettres, et variations linguistiques courantes incluant les formes belges/suisses.
 
-**Français:** Un analyseur de texte français complet qui extrait les valeurs numériques et pourcentages à partir de texte en français naturel. Gère les fractions, négatif, ordinaux, nombres écrits en lettres, et variations linguistiques courantes incluant les formes belges/suisses.
+## Fonctionnalités
 
-## Features / Fonctionnalités
+### ✅ Reconnaissance de Nombres
+- **Chiffres** : `12`, `1234`, `99.9`
+- **Nombres écrits** : `douze`, `mille deux cent trente-quatre`, `quatre-vingt-dix-neuf`
+- **Grands nombres** : `millions`, `milliards`, `billions`
+- **Variantes régionales** : `septante` (70), `huitante`/`octante` (80), `nonante` (90)
 
-### ✅ Number Recognition / Reconnaissance de Nombres
-- **Digits**: `12`, `1234`, `99.9`
-- **Written numbers**: `douze`, `mille deux cent trente quatre`, `quatre-vingt-dix-neuf`
-- **Large numbers**: `millions`, `milliards`, `billions`
-- **Regional variants**: `septante` (70), `huitante`/`octante` (80), `nonante` (90)
+### ✅ Gestion des Pourcentages
+- **Pourcentages directs** : `50%`, `quatre-vingt-dix pour cent`
+- **Fractions en pourcentages** : `1/2` → `50%`, `trois quarts` → `75%`
+- **Nombres ordinaux** : `un cinquième` → `20%`, `trois dixièmes` → `30%`
 
-### ✅ Percentage Handling / Gestion des Pourcentages
-- **Direct percentages**: `50%`, `quatre-vingt-dix pour cent`
-- **Fractions as percentages**: `1/2` → `50%`, `trois quarts` → `75%`
-- **Ordinals**: `un cinquième` → `20%`, `trois dixièmes` → `30%`
+### ✅ Expressions Spéciales
+- **Expressions de zéro** : `aucun`, `rien`, `personne` → `0%`
+- **Totalité** : `tout`, `tous`, `totalité` → `100%`
+- **Approximations** : `presque tout` → `95%`, `quasi rien` → `5%`
 
-### ✅ Special Expressions / Expressions Spéciales
-- **Zero expressions**: `aucun`, `rien`, `personne` → `0%`
-- **Totality**: `tout`, `tous`, `totalité` → `100%`
-- **Approximations**: `presque tout` → `95%`, `quasi rien` → `5%`
+### ✅ Gestion d'Erreurs Robuste
+- **Fautes de frappe** : `quatr` → `quatre`, `cinqante` → `cinquante`
+- **Accents manquants** : `moitie` → `moitié`
+- **Formes plurielles** : `quarts`, `tiers`, `cinquièmes`
 
-### ✅ Robust Error Handling / Gestion d'Erreurs Robuste
-- **Typos**: `quatr` → `quatre`, `cinqante` → `cinquante`
-- **Missing accents**: `moitie` → `moitié`
-- **Plural forms**: `quarts`, `tiers`, `cinquièmes`
-
-## ✅ Negative number / Nombre négatif
+## ✅ Nombres négatifs
 - "moins 10" → "-10"
-- "moins mille deux centre quatre vingt quatorze pourcent" → "-1294%"
+- "moins mille deux cent quatre-vingt-quatorze pour cent" → "-1294%"
+
+## Utilisation
 
 ```python
 from number_extract import *
@@ -53,33 +51,36 @@ print(text_to_understanding("environ un tiers"))  # "33%"
 # Regional variants / Variantes régionales
 print(text_to_understanding("nonante-deux"))  # "92"
 print(text_to_understanding("septante-quatre"))  # "74"
+
+...
+
 ```
 
-## Test Results / Résultats des Tests
+## Résultats des Tests
 
-The parser includes **350+ test cases** covering:
-- Basic numbers (0-999)
-- Large numbers (thousands, millions, billions)
-- All fraction types (halves, thirds, quarters, fifths, etc.)
-- Percentage expressions
-- Regional French variants
-- Common typos and variations
-- Complex contextual phrases
-- Negative phrases
+Le parseur comprend **plus de 350 cas de test** couvrant :
+- Nombres de base (0-999)
+- Grands nombres (milliers, millions, milliards)
+- Tous les types de fractions (demi, tiers, quart, cinquième, etc.)
+- Expressions de pourcentage
+- Variantes régionales du français
+- Fautes de frappe et variations courantes
+- Phrases contextuelles complexes
+- Expressions négatives
 
 ## Examples / Exemples
 
-| Input (French)                  | Output        | Type             |
-|--------------------------------|---------------|------------------|
-| `"aucun"`                      | `"0%"`        | Zero expression  |
-| `"la moitié"`                  | `"50%"`       | Fraction         |
-| `"trois quarts"`               | `"75%"`       | Fraction         |
-| `"85 / 100"`                   | `"85%"`       | Numeric fraction |
-| `"nonante-deux"`               | `"92"`        | Regional variant |
-| `"presque tout"`               | `"95%"`       | Approximation    |
-| `"mille deux cent"`            | `"1200"`      | Large number     |
-| `"un cinquième"`               | `"20%"`       | Ordinal          |
-| `"moins cent quatre-vingt dix"`| `"-190%"`     | Negative percent |
-| `"moins trois cent"`           | `"-300"`      | Negative text    |
-| `"moins trois quarts"`         | `"-75%"`      | Negative fraction|
-| `"nous sommes mardi"`           | `"aucun chiffre"` | No digits    |
+| Entrée               | Sortie        | Type               |
+|--------------------------------|---------------|--------------------|
+| `"aucun"`                      | `"0%"`        | Expression zéro    |
+| `"la moitié"`                  | `"50%"`       | Fraction           |
+| `"trois quarts"`               | `"75%"`       | Fraction           |
+| `"85 / 100"`                   | `"85%"`       | Fraction numérique |
+| `"nonante-deux"`               | `"92"`        | Variante régionale |
+| `"presque tout"`               | `"95%"`       | Approximation      |
+| `"mille deux cent"`            | `"1200"`      | Grand nombre       |
+| `"un cinquième"`               | `"20%"`       | Ordinal            |
+| `"moins cent quatre-vingt dix"`| `"-190%"`     | Pourcentage négatif|
+| `"moins trois cent"`           | `"-300"`      | Texte négatif      |
+| `"moins trois quarts"`         | `"-75%"`      | Fraction négative  |
+| `"nous sommes mardi"`           | `"aucun chiffre"` | Pas de chiffre  |
