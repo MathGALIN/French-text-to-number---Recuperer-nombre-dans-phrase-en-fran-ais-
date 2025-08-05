@@ -80,7 +80,8 @@ Le parseur comprend **plus de 350 cas de test** couvrant :
 | `"presque tout"`               | `"95%"`       | Approximation      |
 | `"mille deux cent"`            | `"1200"`      | Grand nombre       |
 | `"un cinquième"`               | `"20%"`       | Ordinal            |
-| `"moins cent quatre-vingt dix"`| `"-190%"`     | Pourcentage négatif|
+| `"moins cent quatre-vingt dix %"`| `"-190%"`     | Pourcentage négatif|
+| `"trente pourcent"`| `"30%"`     | Pourcentage|
 | `"moins trois cent"`           | `"-300"`      | Texte négatif      |
 | `"moins trois quarts"`         | `"-75%"`      | Fraction négative  |
 | `"nous sommes mardi"`           | `"aucun chiffre"` | Pas de chiffre  |
